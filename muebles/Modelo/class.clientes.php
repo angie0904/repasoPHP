@@ -47,7 +47,7 @@ class Clientes{
     }
     public function modificarClientes(int $id_clientes,String $nombre,String $apellidos, String $dirección, int $telefono){
         $conn=$this->db->conn;
-        $sent="UPDATE clientes SET nombre=?,apellidos=?,dirección=?,telefono=? WHERE id_clientes=?";
+        $sent="UPDATE clientes SET nombre=?,apellidos=?,dirección=?,telefono1=? WHERE id_clientes=?";
         $cons=$conn->prepare($sent);
         $cons->bind_param("sssii",$nombre,$apellidos,$dirección,$telefono,$id_clientes);
         $cons->execute();

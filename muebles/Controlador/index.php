@@ -31,7 +31,10 @@ function modFormCli(){
 }
 
 function modCli(){
-    $modi=$clientes->modificarCliente($_POST['nom'], $_POST['ape'], $_POST['dir'], $_POST['tlf']);
+    require_once('../Vista/header.html');
+    require_once('../Modelo/class.clientes.php');
+    $clientes=new clientes();
+    $modi=$clientes->modificarClientes($_POST['id'], $_POST['nom'], $_POST['ape'], $_POST['dir'], $_POST['tlf']);
     modFormCli();
 }
 
